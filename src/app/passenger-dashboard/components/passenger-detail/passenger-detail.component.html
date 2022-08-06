@@ -1,0 +1,15 @@
+<span class="status" 
+            [ngClass]="{
+                'checked-in': detail.checkedIn,
+                'checked-out': !detail.checkedIn
+            }"></span>
+
+            {{detail.fullname}}
+
+            <div class="date">
+                Check in Date: {{detail.checkedInDate ? (detail.checkedInDate | date:'MMMM d, y' | uppercase): 'Not Checked In'}}
+            </div>
+
+<div class="children">
+                Children: {{ detail.children?.length || 0 }}
+</div>
