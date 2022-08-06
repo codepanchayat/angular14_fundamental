@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 import { Passenger } from "../../models/passenger.interface";
 
@@ -9,7 +9,30 @@ import { Passenger } from "../../models/passenger.interface";
 })
 
 export class PassengerDetailComponent{
+
+    editing: boolean = false;
     
     @Input()
     detail: Passenger
+
+    @Output()
+    remove: EventEmitter<any> = new EventEmitter();
+
+    @Output()
+    edit: EventEmitter<any> = new EventEmitter()
+
+    onNameChange(value: string){
+        this.detail.fullname = value;
+    }
+
+    toggleEdit(){
+        if(this.editing){
+            this.edit.emit(this.detail)
+        }
+        this.editing = !this.editing;
+    }
+
+    onRemove(){
+        this.remove.emit(this.detail);
+    }
 }

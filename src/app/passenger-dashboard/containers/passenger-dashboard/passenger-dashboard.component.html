@@ -1,6 +1,10 @@
 
 <passenger-count [items]="passengers"></passenger-count>
+<h1>Passnger Detail!</h1>
 <passenger-detail
+
+    (edit)="handleEdit($event)"
+    (remove) = "handleRemove($event)"
     *ngFor = "let passenger of passengers"
     [detail] = "passenger"
     >
