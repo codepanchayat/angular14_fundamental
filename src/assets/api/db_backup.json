@@ -2,7 +2,7 @@
   "passengers": [
     {
       "id": 1,
-      "fullname": "Stephan",
+      "fullname": "Stephan Test",
       "checkedIn": true,
       "checkedInDate": 1599612508000,
       "children": null
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "fullname": "Gautham",
+      "fullname": "Gautham KK",
       "checkedIn": true,
       "checkedInDate": 1292136132000,
       "children": null
